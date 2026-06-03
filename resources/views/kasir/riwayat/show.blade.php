@@ -1,0 +1,1 @@
+@extends('kasir.penjualan.show')

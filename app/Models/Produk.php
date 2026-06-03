@@ -1,0 +1,31 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Produk extends Model
+{
+    protected $fillable = [
+        'kategori_produk_id',
+        'nama_produk',
+        'harga',
+        'stok',
+        'deskripsi'
+    ];
+
+    public function kategori()
+    {
+        return $this->belongsTo(
+            KategoriProduk::class,
+            'kategori_produk_id'
+        );
+    }
+
+    public function detailPenjualans()
+    {
+        return $this->hasMany(
+            DetailPenjualan::class
+        );
+    }
+}
